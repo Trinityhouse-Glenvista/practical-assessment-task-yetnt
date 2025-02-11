@@ -12,4 +12,21 @@ public class User {
     private int age;
     private int id;
     private UserPermission userPermission;
+    private String userPassword;
+    
+    private static UserPermission intToEnum(int perm) {
+        switch (perm) {
+            case 0: return UserPermission.ADMIN;
+            case 1: return UserPermission.DEVELOPER;
+            case 2: return UserPermission.USER;
+            default: return UserPermission.UNDEFINED;
+        }
+    }
+    
+    User(String name, int age, int id,int perm) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.userPermission = intToEnum(perm);
+    }
 }
