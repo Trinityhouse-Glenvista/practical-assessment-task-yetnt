@@ -10,5 +10,6 @@
 public enum UserPermission {
     ADMIN,
     DEVELOPER,
-    USER
+    USER,
+    UNDEFINED
 }
