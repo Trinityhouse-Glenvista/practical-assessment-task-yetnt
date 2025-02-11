@@ -1,4 +1,4 @@
-name,age,id,userPermission
+name,age,id,userPermission,password
 John,25,1,1
 Alice,30,2,2
 Bob,22,3,1
