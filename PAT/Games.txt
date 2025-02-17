@@ -1,0 +1,51 @@
+gameId, gameName,ownedBy,developer,description,version
+1,Call of Duty,,4,A first-person shooter game,1
+2,Fortnite,,8,A battle royale game,1
+3,The Legend of Zelda,3,14,An action-adventure game,1
+4,Animal Crossing,4,22,A social simulation game,1
+5,Final Fantasy,5,4,A role-playing game,1
+6,Dragon Quest,6,8,A role-playing game,1
+7,Civilization,7,14,A turn-based strategy game,1
+8,Age of Empires,8,22,A real-time strategy game,1
+9,Grand Theft Auto,9,4,An open-world action-adventure game,1
+10,Red Dead Redemption,10,8,An open-world action-adventure game,1
+11,Uncharted,11,14,An action-adventure game,1
+12,The Last of Us,12,22,An action-adventure game,1
+13,The Witcher,13,4,An action role-playing game,1
+14,Cyberpunk 2077,14,8,An action role-playing game,1
+15,StarCraft,15,14,A real-time strategy game,1
+16,Warcraft,16,22,A real-time strategy game,1
+17,Halo,17,4,A first-person shooter game,1
+18,Destiny,,8,A first-person shooter game,1
+19,Tomb Raider,19,14,An action-adventure game,1
+20,Assassin's Creed,20,22,An action-adventure game,1
+21,Minecraft,21,4,A sandbox game,1
+22,Roblox,,8,A sandbox game,1
+23,Overwatch,23,14,A team-based shooter game,1
+24,Valorant,24,22,A tactical shooter game,1
+25,League of Legends,25,4,A multiplayer online battle arena game,1
+26,Dota 2,26,8,A multiplayer online battle arena game,1
+27,Stardew Valley,27,14,A farming simulation game,1
+28,Harvest Moon,28,22,A farming simulation game,1
+29,Counter-Strike,29,4,A first-person shooter game,1
+30,Rainbow Six Siege,30,8,A tactical shooter game,1
+31,Among Us,,14,A multiplayer party game,1
+32,Fall Guys,2,22,A battle royale game,1
+33,Resident Evil,3,4,A survival horror game,1
+34,Silent Hill,4,8,A survival horror game,1
+35,The Sims,,14,A life simulation game,1
+36,SimCity,6,22,A city-building simulation game,1
+37,World of Warcraft,7,4,A massively multiplayer online role-playing game,1
+38,Guild Wars,8,8,A massively multiplayer online role-playing game,1
+39,Diablo,9,14,An action role-playing game,1
+40,Path of Exile,10,22,An action role-playing game,1
+41,Dark Souls,11,4,An action role-playing game,1
+42,Bloodborne,12,8,An action role-playing game,1
+43,Fortnite,13,14,A battle royale game,1
+44,Apex Legends,14,22,A battle royale game,1
+45,Call of Duty,15,4,A first-person shooter game,1
+46,Battlefield,16,8,A first-person shooter game,1
+47,Animal Crossing,17,14,A social simulation game,1
+48,Stardew Valley,,22,A farming simulation game,1
+49,Dragon Quest,19,4,A role-playing game,1
+50,Persona,,8,A role-playing game,1
