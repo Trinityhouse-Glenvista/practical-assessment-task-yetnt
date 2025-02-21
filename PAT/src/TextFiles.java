@@ -78,7 +78,7 @@ public class TextFiles {
         return new ArrayList<>(); // Implement file reading logic for Games
     }
 
-    public static ArrayList<Game> findGames(UserPermission userPermission) {
+    public static ArrayList<Game> findGames(int version) {
         return new ArrayList<>(); // Implement filtering logic
     }
 

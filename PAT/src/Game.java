@@ -13,8 +13,8 @@ public class Game {
     private int developer;
     private String description;
     private int version;
-    
-    Game(int id, String name, int dev, String description,  int vers) {
+
+    Game(int id, String name, int dev, String description, int vers) {
         // dev adds a game, version is 0
         gameName = name; // change these values
         developer = dev; // to add to the db
@@ -22,21 +22,19 @@ public class Game {
         gameId = id;
         developer = dev;
     }
-    
+
     Game(String name, int dev, String description) {
         // dev adds a game, version is 0
         gameName = name; // change these values
         developer = dev; // to add to the db
         version = 0;
     }
-    
-    public void approveGame(String gameName) {
+
+    public void approveGame() {
         // admin approves of a game o the version bumps to 1
     }
-    
-    public void buyGame(String gameName) {
-        // user buys the game
-        // only when it has a veriwson higher than 0
-        // and isn't alreay owned by a user.
+
+    public void deleteSelf() {
+        // deletes game.
     }
 }
