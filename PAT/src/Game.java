@@ -10,20 +10,24 @@
 public class Game {
     private int gameId;
     private String gameName;
-    private int ownedBy;
     private int developer;
     private String description;
     private int version;
+    
+    Game(int id, String name, int dev, String description,  int vers) {
+        // dev adds a game, version is 0
+        gameName = name; // change these values
+        developer = dev; // to add to the db
+        version = vers;
+        gameId = id;
+        developer = dev;
+    }
     
     Game(String name, int dev, String description) {
         // dev adds a game, version is 0
         gameName = name; // change these values
         developer = dev; // to add to the db
         version = 0;
-    }
-    
-    Game(int gameId) {
-        // This overload will try to search the db if a game exists.
     }
     
     public void approveGame(String gameName) {
