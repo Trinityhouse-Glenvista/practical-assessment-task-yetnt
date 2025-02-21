@@ -21,64 +21,75 @@ public class TextFiles {
     }
     
     /**
-     *
+     * Rereads the text files.
      * @return
      */
     public final void read() {
         try {
             Scanner users = new Scanner(new File("User.txt"));
+            Scanner games = new Scanner(new File("Games.txt"));
             int lineNum = -1;
             while (users.hasNextLine()) {
                 lineNum++;
                 String user = users.nextLine();
                 if (lineNum == 0) continue;
-                System.out.println(user);
                 String[] args = user.split(",");
                 userArray.add(
                         new User(
                                 args[0], 
                                 Integer.parseInt(args[1]), 
                                 Integer.parseInt(args[2]), 
-                                Integer.parseInt(args[3])
+                                Integer.parseInt(args[3]),
+                                args[4]
                         )
                 );
             }
             users.close();
             lineNum = -1;
-            
-//            Scanner games = new Scanner(new File("Games.txt"));
+            while (games.hasNextLine()) {
+                lineNum++;
+                String game = games.nextLine();
+                if (lineNum == 0) continue;
+                String[] args = game.split(",");
+                gamesArray.add(
+                        new Game(
+                                Integer.parseInt(args[0]),
+                                args[1],
+                                Integer.parseInt(args[2]),
+                                args[3],
+                                Integer.parseInt(args[4])
+                        )
+                );
+            }
+            games.close();
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TextFiles.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-    public static class Games {
 
-        public static ArrayList<Game> get() {
-            return new ArrayList<>(); // Implement file reading logic for Games
-        }
-
-        public static ArrayList<Game> find(UserPermission userPermission) {
-            return new ArrayList<>(); // Implement filtering logic
-        }
-
-        public static Game findOne(int id) {
-            return null; // Implement search by ID
-        }
+    public static ArrayList<Game> getGames() {
+        return new ArrayList<>(); // Implement file reading logic for Games
     }
 
-    public static class Users {
-        public static ArrayList<User> get() {
-            return userArray; // Implement file reading logic for Users
-        }
+    public static ArrayList<Game> findGames(UserPermission userPermission) {
+        return new ArrayList<>(); // Implement filtering logic
+    }
 
-        public static ArrayList<User> find(UserPermission userPermission) {
-            return new ArrayList<>(); // Implement filtering logic
-        }
+    public static Game findOneGame(int id) {
+        return null; // Implement search by ID
+    }
 
-        public static User findOne(int id) {
-            return null; // Implement search by ID
-        }
+    public ArrayList<User> getUsers() {
+        return userArray; // Implement file reading logic for Users
+    }
+
+    public ArrayList<User> findUsers(UserPermission userPermission) {
+        return new ArrayList<>(); // Implement filtering logic
+    }
+
+    public User findOneUser(int id) {
+        return null; // Implement search by ID
     }
 }
