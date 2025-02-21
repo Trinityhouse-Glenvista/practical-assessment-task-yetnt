@@ -1,19 +1,23 @@
 
-import java.util.ArrayList;
+import java.util.*;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 
 /**
  *
  * @author ACER
  */
 public class Test {
+
     public static void main(String args[]) {
-        TextFiles r = new TextFiles();
-        String p = "lol, lol,, pool";
-        System.out.println(p.split(",")[2]);
+        TextFiles files = new TextFiles();
+
+        ArrayList<User> users = files.getUsers();
+        ArrayList<Game> games = files.getGames();
+
+        ArrayList<Integer> ownd = users.get(10).ownedGames;
+        for (int i : ownd.stream().mapToInt(Integer::intValue).toArray()) {
+            System.out.println(i);
+        }
+
     }
 }

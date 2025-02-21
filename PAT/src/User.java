@@ -41,4 +41,12 @@ public class User {
             .forEach(this.ownedGames::add);
 
     }
+    
+    User(String name, int age, int id,int perm) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.userPermission = intToEnum(perm);
+        this.ownedGames = new ArrayList<>();
+    }
 }
