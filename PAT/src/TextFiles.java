@@ -90,10 +90,20 @@ public class TextFiles {
         }
     }
 
+    /**
+     * Retrieves the list of games.
+     *
+     * @return an ArrayList of Game objects.
+     */
     public ArrayList<Game> getGames() {
         return gamesArray; // Implement file reading logic for Games
     }
 
+    /**
+     * Retrieves a list of users.
+     *
+     * @return An ArrayList of User objects.
+     */
     public ArrayList<User> getUsers() {
         return userArray; // Implement file reading logic for Users
     }
@@ -123,14 +133,22 @@ public class TextFiles {
 
         return games;
     }
-    
+
+    /**
+     * Finds and returns the first game in the gamesArray that matches the given
+     * condition.
+     *
+     * @param condition a Predicate that defines the condition to test each game
+     *                  against
+     * @return the first Game that matches the condition, or null if no game matches
+     */
     public Game findGame(Predicate<Game> condition) {
         for (Game game : gamesArray) {
             if (condition.test(game)) {
                 return game;
             }
         }
-        
+
         return null;
     }
 
@@ -151,7 +169,15 @@ public class TextFiles {
 
         return users;
     }
-    
+
+    /**
+     * Finds and returns the first user in the userArray that matches the given
+     * condition.
+     *
+     * @param condition a Predicate that defines the condition to test each user
+     *                  against
+     * @return the first User that matches the condition, or null if no user matches
+     */
     public User findUser(Predicate<User> condition) {
         for (User user : userArray) {
             if (condition.test(user)) {
