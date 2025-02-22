@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 
 /**
  *
@@ -11,13 +9,11 @@ public class Test {
     public static void main(String args[]) {
         TextFiles files = new TextFiles();
 
-        ArrayList<User> users = files.getUsers();
-        ArrayList<Game> games = files.getGames();
+        User user = files.findUser(u -> "Nikhil".equals(u.name));
 
-        ArrayList<Integer> ownd = users.get(10).ownedGames;
-        for (int i : ownd.stream().mapToInt(Integer::intValue).toArray()) {
-            System.out.println(i);
-        }
+        user.age--;
+        
+        files.save();
 
     }
 }

@@ -10,10 +10,11 @@ import java.util.logging.*;
 
 /**
  * Class that reads file input
- * 
+ *
  * @author ACER
  */
 public class TextFiles {
+
     private static ArrayList<User> userArray = new ArrayList<>();
     private static ArrayList<Game> gamesArray = new ArrayList<>();
 
@@ -22,44 +23,44 @@ public class TextFiles {
     }
 
     /**
-     * Reads user and game data from "User.txt" and "Games.txt" files respectively.
-     * The method parses each line of the files, skipping the first line (assumed to
-     * be headers),
-     * and populates the userArray and gamesArray with User and Game objects.
-     * 
-     * User.txt format:
-     * - Each line represents a user with comma-separated values.
-     * - The first line is skipped.
-     * - If a line has more than 5 values, the User object is created with 6
+     * Reads user and game data from "User.txt" and "Games.txt" files
+     * respectively. The method parses each line of the files, skipping the
+     * first line (assumed to be headers), and populates the userArray and
+     * gamesArray with User and Game objects.
+     *
+     * User.txt format: - Each line represents a user with comma-separated
+     * values. - The first line is skipped. - If a line has more than 5 values,
+     * the User object is created with 6 parameters. - Otherwise, the User
+     * object is created with 5 parameters.
+     *
+     * Games.txt format: - Each line represents a game with comma-separated
+     * values. - The first line is skipped. - Each Game object is created with 5
      * parameters.
-     * - Otherwise, the User object is created with 5 parameters.
-     * 
-     * Games.txt format:
-     * - Each line represents a game with comma-separated values.
-     * - The first line is skipped.
-     * - Each Game object is created with 5 parameters.
-     * 
+     *
      * If the files are not found, a FileNotFoundException is caught and logged.
      */
     public final void read() {
         try {
-            Scanner users = new Scanner(new File("User.txt"));
+            userArray.clear();
+            gamesArray.clear();
+            Scanner users = new Scanner(new File("Users.txt"));
             Scanner games = new Scanner(new File("Games.txt"));
             int lineNum = -1;
             while (users.hasNextLine()) {
                 lineNum++;
                 String user = users.nextLine();
-                if (lineNum == 0)
+                if (lineNum == 0) {
                     continue;
+                }
                 String[] args = user.split(",");
                 userArray.add(
                         args.length > 5 ? new User(
-                                args[0],
-                                Integer.parseInt(args[1]),
-                                Integer.parseInt(args[2]),
-                                Integer.parseInt(args[3]),
-                                args[4],
-                                args[5])
+                                        args[0],
+                                        Integer.parseInt(args[1]),
+                                        Integer.parseInt(args[2]),
+                                        Integer.parseInt(args[3]),
+                                        args[4],
+                                        args[5])
                                 : new User(
                                         args[0],
                                         Integer.parseInt(args[1]),
@@ -72,8 +73,9 @@ public class TextFiles {
             while (games.hasNextLine()) {
                 lineNum++;
                 String game = games.nextLine();
-                if (lineNum == 0)
+                if (lineNum == 0) {
                     continue;
+                }
                 String[] args = game.split(",");
                 gamesArray.add(
                         new Game(
@@ -86,6 +88,30 @@ public class TextFiles {
             games.close();
 
         } catch (FileNotFoundException ex) {
+            Logger.getLogger(TextFiles.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void save() {
+        String userHeadings = "name,age,id,userPermission,password,ownedGames";
+        String gameHeadings = "gameId,gameName,developer,description,version";
+
+        try {
+            PrintWriter gameFile = new PrintWriter(new FileWriter("Games.txt"));
+            PrintWriter userFile = new PrintWriter(new FileWriter("Users.txt"));
+
+            gameFile.println(gameHeadings);
+            for (int i = 0; i < gamesArray.size(); i++) {
+                gameFile.println(gamesArray.get(i).toTextFileString());
+            }
+            gameFile.close();
+
+            userFile.println(userHeadings);
+            for (int i = 0; i < userArray.size(); i++) {
+                userFile.println(userArray.get(i).toTextFileString());
+            }
+            userFile.close();
+        } catch (IOException ex) {
             Logger.getLogger(TextFiles.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -116,7 +142,6 @@ public class TextFiles {
     // public ArrayList<User> findUsers(UserPermission userPermission) {
     // return new ArrayList<>(); // Implement filtering logic
     // }
-
     /**
      * Finds and returns a list of games that match the given condition.
      *
@@ -139,8 +164,9 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each game
-     *                  against
-     * @return the first Game that matches the condition, or null if no game matches
+     * against
+     * @return the first Game that matches the condition, or null if no game
+     * matches
      */
     public Game findGame(Predicate<Game> condition) {
         for (Game game : gamesArray) {
@@ -156,7 +182,7 @@ public class TextFiles {
      * Finds and returns a list of users that match the given condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     *                  against
+     * against
      * @return an ArrayList of users that match the given condition
      */
     public ArrayList<User> findUsers(Predicate<User> condition) {
@@ -175,8 +201,9 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     *                  against
-     * @return the first User that matches the condition, or null if no user matches
+     * against
+     * @return the first User that matches the condition, or null if no user
+     * matches
      */
     public User findUser(Predicate<User> condition) {
         for (User user : userArray) {

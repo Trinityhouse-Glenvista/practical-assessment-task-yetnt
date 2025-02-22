@@ -36,7 +36,7 @@ public class Game {
         this.developer = dev; // to add to the db
         this.version = vers;
         this.gameId = id;
-        this.developer = dev;
+        this.description = description;
     }
 
     /**
@@ -52,6 +52,7 @@ public class Game {
         this.name = gameName; // change these values
         this.developer = dev; // to add to the db
         this.version = 0;
+        this.description = description;
     }
 
     public void approveGame() {
