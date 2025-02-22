@@ -14,9 +14,9 @@ public class User {
 
     public String name;
     public int age;
-    private int id;
-    private UserPermission userPermission;
-    private String userPassword;
+    public int id;
+    public UserPermission userPermission;
+    public String userPassword;
     public ArrayList<Integer> ownedGames;
 
     User(String name, int age, int id, int perm, String pass, String games) {

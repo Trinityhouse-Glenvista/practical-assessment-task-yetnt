@@ -8,10 +8,10 @@
  * @author ACER
  */
 public class Game {
-    private int gameId;
+    public int gameId;
     public String name;
     public int developer;
-    private String description;
+    public String description;
     public int version;
 
     Game(int id, String gameName, int dev, String description, int vers) {
