@@ -9,25 +9,24 @@
  */
 public class Game {
     private int gameId;
-    private String gameName;
-    private int developer;
+    public String name;
+    public int developer;
     private String description;
-    private int version;
+    public int version;
 
-    Game(int id, String name, int dev, String description, int vers) {
-        // dev adds a game, version is 0
-        gameName = name; // change these values
-        developer = dev; // to add to the db
-        version = vers;
-        gameId = id;
-        developer = dev;
+    Game(int id, String gameName, int dev, String description, int vers) {
+        this.name = gameName; // change these values
+        this.developer = dev; // to add to the db
+        this.version = vers;
+        this.gameId = id;
+        this.developer = dev;
     }
 
-    Game(String name, int dev, String description) {
+    Game(String gameName, int dev, String description) {
         // dev adds a game, version is 0
-        gameName = name; // change these values
-        developer = dev; // to add to the db
-        version = 0;
+        this.name = gameName; // change these values
+        this.developer = dev; // to add to the db
+        this.version = 0;
     }
 
     public void approveGame() {
@@ -36,5 +35,13 @@ public class Game {
 
     public void deleteSelf() {
         // deletes game.
+    }
+    
+    public String toTextFileString() {
+        return Integer.toString(this.gameId)
+                + "," + this.name
+                + "," + Integer.toString(this.developer)
+                + "," + this.description
+                + "," + Integer.toString(this.version);
     }
 }
