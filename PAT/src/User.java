@@ -61,11 +61,20 @@ public class User {
      * @param pass the password for the user
      */
     User(String name, int age, int id, int perm, String pass) {
+        // Constructor to create a new user instance with no games from the existing users.
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.userPassword = pass;
+        this.userPermission = UserPermission.toEnum(perm);
+        this.ownedGames = new ArrayList<>();
+    }
+    
+    User(String name, int age, int perm, String pass) {
         // Constructor to create a new user instance, this is a user who has just been
         // created for the first time.
         this.name = name;
         this.age = age;
-        this.id = id;
         this.userPassword = pass;
         this.userPermission = UserPermission.toEnum(perm);
         this.ownedGames = new ArrayList<>();
@@ -90,9 +99,9 @@ public class User {
      * @return a string representation of the User object for text file storage
      */
     public String toTextFileString() {
-        return this.name
+        return Integer.toString(this.id)
+                + "," + this.name
                 + "," + Integer.toString(this.age)
-                + "," + Integer.toString(this.id)
                 + "," + Integer.toString(this.userPermission.toInt())
                 + "," + this.userPassword
                 + "," + (!this.ownedGames.isEmpty() ? this.ownedGames.stream()

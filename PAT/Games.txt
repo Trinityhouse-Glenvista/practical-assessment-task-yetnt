@@ -1,4 +1,4 @@
-gameId,gameName,developer,description,version
+id,name,developer,description,version
 0,Call of Duty,4,A first-person shooter game,1
 1,Fortnite,8,A battle royale game,1
 2,The Legend of Zelda,14,An action-adventure game,1

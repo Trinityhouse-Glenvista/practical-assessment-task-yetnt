@@ -15,7 +15,7 @@
  * a string representation suitable for saving to a text file.
  */
 public class Game {
-    public int gameId;
+    public int id;
     public String name;
     public int developer;
     public String description;
@@ -35,7 +35,7 @@ public class Game {
         this.name = gameName; // change these values
         this.developer = dev; // to add to the db
         this.version = vers;
-        this.gameId = id;
+        this.id = id;
         this.description = description;
     }
 
@@ -70,7 +70,7 @@ public class Game {
      * @return A string representation of the game object formatted for a text file.
      */
     public String toTextFileString() {
-        return Integer.toString(this.gameId)
+        return Integer.toString(this.id)
                 + "," + this.name
                 + "," + Integer.toString(this.developer)
                 + "," + this.description

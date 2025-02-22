@@ -15,7 +15,7 @@ import java.util.logging.*;
  */
 public class TextFiles {
 
-    private static ArrayList<User> userArray = new ArrayList<>();
+    private static ArrayList<User> usersArray = new ArrayList<>();
     private static ArrayList<Game> gamesArray = new ArrayList<>();
 
     TextFiles() {
@@ -41,7 +41,7 @@ public class TextFiles {
      */
     public final void read() {
         try {
-            userArray.clear();
+            usersArray.clear();
             gamesArray.clear();
             Scanner users = new Scanner(new File("Users.txt"));
             Scanner games = new Scanner(new File("Games.txt"));
@@ -53,14 +53,14 @@ public class TextFiles {
                     continue;
                 }
                 String[] args = user.split(",");
-                userArray.add(
+                usersArray.add(
                         args.length > 5 ? new User(
-                                args[0],
-                                Integer.parseInt(args[1]),
-                                Integer.parseInt(args[2]),
-                                Integer.parseInt(args[3]),
-                                args[4],
-                                args[5])
+                                        args[0],
+                                        Integer.parseInt(args[1]),
+                                        Integer.parseInt(args[2]),
+                                        Integer.parseInt(args[3]),
+                                        args[4],
+                                        args[5])
                                 : new User(
                                         args[0],
                                         Integer.parseInt(args[1]),
@@ -96,23 +96,21 @@ public class TextFiles {
      * Saves the user and game data to text files.
      * <p>
      * This method writes the user data to "Users.txt" and the game data to
-     * "Games.txt".
-     * The data is written in CSV format with predefined headings.
+     * "Games.txt". The data is written in CSV format with predefined headings.
      * </p>
      * <p>
-     * The user data includes the following fields: name, age, id, userPermission,
-     * password, ownedGames.
-     * The game data includes the following fields: gameId, gameName, developer,
-     * description, version.
+     * The user data includes the following fields: name, age, id,
+     * userPermission, password, ownedGames. The game data includes the
+     * following fields: gameId, gameName, developer, description, version.
      * </p>
      * <p>
-     * If an IOException occurs during the file writing process, it is logged using
-     * the Logger.
+     * If an IOException occurs during the file writing process, it is logged
+     * using the Logger.
      * </p>
      */
     public void save() {
-        String userHeadings = "name,age,id,userPermission,password,ownedGames";
-        String gameHeadings = "gameId,gameName,developer,description,version";
+        String userHeadings = "id,name,age,userPermission,password,ownedGames";
+        String gameHeadings = "id,name,developer,description,version";
 
         try {
             PrintWriter gameFile = new PrintWriter(new FileWriter("Games.txt"));
@@ -125,8 +123,8 @@ public class TextFiles {
             gameFile.close();
 
             userFile.println(userHeadings);
-            for (int i = 0; i < userArray.size(); i++) {
-                userFile.println(userArray.get(i).toTextFileString());
+            for (int i = 0; i < usersArray.size(); i++) {
+                userFile.println(usersArray.get(i).toTextFileString());
             }
             userFile.close();
         } catch (IOException ex) {
@@ -149,7 +147,7 @@ public class TextFiles {
      * @return An ArrayList of User objects.
      */
     public ArrayList<User> getUsers() {
-        return userArray; // Implement file reading logic for Users
+        return usersArray; // Implement file reading logic for Users
     }
 
     // public static ArrayList<Game> findGames(int version) {
@@ -182,9 +180,9 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each game
-     *                  against
+     * against
      * @return the first Game that matches the condition, or null if no game
-     *         matches
+     * matches
      */
     public Game findGame(Predicate<Game> condition) {
         for (Game game : gamesArray) {
@@ -200,12 +198,12 @@ public class TextFiles {
      * Finds and returns a list of users that match the given condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     *                  against
+     * against
      * @return an ArrayList of users that match the given condition
      */
     public ArrayList<User> findUsers(Predicate<User> condition) {
         ArrayList<User> users = new ArrayList<>();
-        for (User user : userArray) {
+        for (User user : usersArray) {
             if (condition.test(user)) {
                 users.add(user);
             }
@@ -219,17 +217,29 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     *                  against
+     * against
      * @return the first User that matches the condition, or null if no user
-     *         matches
+     * matches
      */
     public User findUser(Predicate<User> condition) {
-        for (User user : userArray) {
+        for (User user : usersArray) {
             if (condition.test(user)) {
                 return user;
             }
         }
 
         return null;
+    }
+
+    public Game add(Game game) {
+        game.id = gamesArray.getLast().id + 1;
+        gamesArray.add(game);
+        return game;
+    }
+
+    public User add(User user) {
+        user.id = usersArray.getLast().id + 1;
+        usersArray.add(user);
+        return user;
     }
 }
