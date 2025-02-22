@@ -55,12 +55,12 @@ public class TextFiles {
                 String[] args = user.split(",");
                 userArray.add(
                         args.length > 5 ? new User(
-                                        args[0],
-                                        Integer.parseInt(args[1]),
-                                        Integer.parseInt(args[2]),
-                                        Integer.parseInt(args[3]),
-                                        args[4],
-                                        args[5])
+                                args[0],
+                                Integer.parseInt(args[1]),
+                                Integer.parseInt(args[2]),
+                                Integer.parseInt(args[3]),
+                                args[4],
+                                args[5])
                                 : new User(
                                         args[0],
                                         Integer.parseInt(args[1]),
@@ -92,6 +92,24 @@ public class TextFiles {
         }
     }
 
+    /**
+     * Saves the user and game data to text files.
+     * <p>
+     * This method writes the user data to "Users.txt" and the game data to
+     * "Games.txt".
+     * The data is written in CSV format with predefined headings.
+     * </p>
+     * <p>
+     * The user data includes the following fields: name, age, id, userPermission,
+     * password, ownedGames.
+     * The game data includes the following fields: gameId, gameName, developer,
+     * description, version.
+     * </p>
+     * <p>
+     * If an IOException occurs during the file writing process, it is logged using
+     * the Logger.
+     * </p>
+     */
     public void save() {
         String userHeadings = "name,age,id,userPermission,password,ownedGames";
         String gameHeadings = "gameId,gameName,developer,description,version";
@@ -164,9 +182,9 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each game
-     * against
+     *                  against
      * @return the first Game that matches the condition, or null if no game
-     * matches
+     *         matches
      */
     public Game findGame(Predicate<Game> condition) {
         for (Game game : gamesArray) {
@@ -182,7 +200,7 @@ public class TextFiles {
      * Finds and returns a list of users that match the given condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     * against
+     *                  against
      * @return an ArrayList of users that match the given condition
      */
     public ArrayList<User> findUsers(Predicate<User> condition) {
@@ -201,9 +219,9 @@ public class TextFiles {
      * condition.
      *
      * @param condition a Predicate that defines the condition to test each user
-     * against
+     *                  against
      * @return the first User that matches the condition, or null if no user
-     * matches
+     *         matches
      */
     public User findUser(Predicate<User> condition) {
         for (User user : userArray) {
