@@ -1,51 +1,51 @@
 gameId,gameName,developer,description,version
-1,Call of Duty,4,A first-person shooter game,1
-2,Fortnite,8,A battle royale game,1
-3,The Legend of Zelda,14,An action-adventure game,1
-4,Animal Crossing,22,A social simulation game,1
-5,Final Fantasy,4,A role-playing game,1
-6,Dragon Quest,8,A role-playing game,1
-7,Civilization,14,A turn-based strategy game,1
-8,Age of Empires,22,A real-time strategy game,1
-9,Grand Theft Auto,4,An open-world action-adventure game,1
-10,Red Dead Redemption,8,An open-world action-adventure game,1
-11,Uncharted,14,An action-adventure game,1
-12,The Last of Us,22,An action-adventure game,1
-13,The Witcher,4,An action role-playing game,1
-14,Cyberpunk 2077,8,An action role-playing game,1
-15,StarCraft,14,A real-time strategy game,1
-16,Warcraft,22,A real-time strategy game,1
-17,Halo,4,A first-person shooter game,1
-18,Destiny,8,A first-person shooter game,1
-19,Tomb Raider,14,An action-adventure game,1
-20,Assassin's Creed,22,An action-adventure game,1
-21,Minecraft,4,A sandbox game,1
-22,Roblox,8,A sandbox game,1
-23,Overwatch,14,A team-based shooter game,1
-24,Valorant,22,A tactical shooter game,1
-25,League of Legends,4,A multiplayer online battle arena game,1
-26,Dota 2,8,A multiplayer online battle arena game,1
-27,Stardew Valley,14,A farming simulation game,1
-28,Harvest Moon,22,A farming simulation game,1
-29,Counter-Strike,4,A first-person shooter game,1
-30,Rainbow Six Siege,8,A tactical shooter game,1
-31,Among Us,14,A multiplayer party game,1
-32,Fall Guys,22,A battle royale game,1
-33,Resident Evil,4,A survival horror game,1
-34,Silent Hill,8,A survival horror game,1
-35,The Sims,14,A life simulation game,1
-36,SimCity,22,A city-building simulation game,1
-37,World of Warcraft,4,A massively multiplayer online role-playing game,1
-38,Guild Wars,8,A massively multiplayer online role-playing game,1
-39,Diablo,14,An action role-playing game,1
-40,Path of Exile,22,An action role-playing game,1
-41,Dark Souls,4,An action role-playing game,1
-42,Bloodborne,8,An action role-playing game,1
-43,Fortnite,14,A battle royale game,1
-44,Apex Legends,22,A battle royale game,1
-45,Call of Duty,4,A first-person shooter game,1
-46,Battlefield,8,A first-person shooter game,1
-47,Animal Crossing,14,A social simulation game,1
-48,Stardew Valley,22,A farming simulation game,1
-49,Dragon Quest,4,A role-playing game,1
-50,Persona,8,A role-playing game,1
+0,Call of Duty,4,A first-person shooter game,1
+1,Fortnite,8,A battle royale game,1
+2,The Legend of Zelda,14,An action-adventure game,1
+3,Animal Crossing,22,A social simulation game,1
+4,Final Fantasy,4,A role-playing game,1
+5,Dragon Quest,8,A role-playing game,1
+6,Civilization,14,A turn-based strategy game,1
+7,Age of Empires,22,A real-time strategy game,1
+8,Grand Theft Auto,4,An open-world action-adventure game,1
+9,Red Dead Redemption,8,An open-world action-adventure game,1
+10,Uncharted,14,An action-adventure game,1
+11,The Last of Us,22,An action-adventure game,1
+12,The Witcher,4,An action role-playing game,1
+13,Cyberpunk 2077,8,An action role-playing game,1
+14,StarCraft,14,A real-time strategy game,1
+15,Warcraft,22,A real-time strategy game,1
+16,Halo,4,A first-person shooter game,1
+17,Destiny,8,A first-person shooter game,1
+18,Tomb Raider,14,An action-adventure game,1
+19,Assassin's Creed,22,An action-adventure game,1
+20,Minecraft,8,A sandbox game,1
+21,Roblox,8,A sandbox game,1
+22,Overwatch,14,A team-based shooter game,1
+23,Valorant,22,A tactical shooter game,1
+24,League of Legends,4,A multiplayer online battle arena game,1
+25,Dota 2,8,A multiplayer online battle arena game,1
+26,Stardew Valley,14,A farming simulation game,1
+27,Harvest Moon,22,A farming simulation game,1
+28,Counter-Strike,4,A first-person shooter game,1
+29,Rainbow Six Siege,8,A tactical shooter game,1
+30,Among Us,14,A multiplayer party game,1
+31,Fall Guys,22,A battle royale game,1
+32,Resident Evil,4,A survival horror game,1
+33,Silent Hill,8,A survival horror game,1
+34,The Sims,14,A life simulation game,1
+35,SimCity,22,A city-building simulation game,1
+36,World of Warcraft,4,A massively multiplayer online role-playing game,1
+37,Guild Wars,8,A massively multiplayer online role-playing game,1
+38,Diablo,14,An action role-playing game,1
+39,Path of Exile,22,An action role-playing game,1
+40,Dark Souls,4,An action role-playing game,1
+41,Bloodborne,8,An action role-playing game,1
+42,Fortnite,14,A battle royale game,1
+43,Apex Legends,22,A battle royale game,1
+44,Call of Duty,4,A first-person shooter game,1
+45,Battlefield,8,A first-person shooter game,1
+46,Animal Crossing,14,A social simulation game,1
+47,Stardew Valley,22,A farming simulation game,1
+48,Dragon Quest,4,A role-playing game,1
+49,Persona,8,A role-playing game,1
