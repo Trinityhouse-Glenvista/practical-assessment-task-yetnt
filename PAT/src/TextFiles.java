@@ -76,7 +76,7 @@ public class TextFiles {
     
 
     public static ArrayList<Game> getGames() {
-        return new ArrayList<>(); // Implement file reading logic for Games
+        return gamesArray; // Implement file reading logic for Games
     }
 
     public static ArrayList<Game> findGames(int version) {
