@@ -35,17 +35,19 @@ public class TextFiles {
                 if (lineNum == 0) continue;
                 String[] args = user.split(",");
                 userArray.add(
-                        args.length > 4 ? new User(
+                        args.length > 5 ? new User(
+                                args[0], 
+                                Integer.parseInt(args[1]), 
+                                Integer.parseInt(args[2]), 
+                                Integer.parseInt(args[3]),
+                                args[4],
+                                args[5]
+                        ) : new User(
                                 args[0], 
                                 Integer.parseInt(args[1]), 
                                 Integer.parseInt(args[2]), 
                                 Integer.parseInt(args[3]),
                                 args[4]
-                        ) : new User(
-                                args[0], 
-                                Integer.parseInt(args[1]), 
-                                Integer.parseInt(args[2]), 
-                                Integer.parseInt(args[3])
                         )
                 );
             }

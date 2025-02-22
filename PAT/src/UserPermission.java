@@ -8,8 +8,27 @@
  * @author ACER
  */
 public enum UserPermission {
-    ADMIN,
-    DEVELOPER,
-    USER,
-    UNDEFINED
+    ADMIN(0),
+    DEVELOPER(1),
+    USER(2),
+    UNDEFINED(-1);
+
+    private final int value;
+
+    UserPermission(int value) {
+        this.value = value;
+    }
+
+    public int toInt() {
+        return this.value;
+    }
+
+    public static UserPermission toEnum(int perm) {
+        for (UserPermission permission : UserPermission.values()) {
+            if (permission.value == perm) {
+                return permission;
+            }
+        }
+        return UNDEFINED;
+    }
 }
