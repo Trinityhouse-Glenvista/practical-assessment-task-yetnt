@@ -55,16 +55,16 @@ public class TextFiles {
                 String[] args = user.split(",");
                 usersArray.add(
                         args.length > 5 ? new User(
-                                        args[0],
-                                        Integer.parseInt(args[1]),
+                                        args[1],
                                         Integer.parseInt(args[2]),
+                                        Integer.parseInt(args[0]),
                                         Integer.parseInt(args[3]),
                                         args[4],
                                         args[5])
                                 : new User(
-                                        args[0],
-                                        Integer.parseInt(args[1]),
+                                        args[1],
                                         Integer.parseInt(args[2]),
+                                        Integer.parseInt(args[0]),
                                         Integer.parseInt(args[3]),
                                         args[4]));
             }
@@ -241,5 +241,27 @@ public class TextFiles {
         user.id = usersArray.getLast().id + 1;
         usersArray.add(user);
         return user;
+    }
+    
+    public ArrayList<User> removeUsers(Predicate<User> condition) {
+        ArrayList<User> removedUsers = new ArrayList<>();
+        for (User user : usersArray) {
+            if (condition.test(user)) {
+                removedUsers.add(user);
+                usersArray.remove(user);
+            }
+        }
+        return removedUsers;
+    }
+    
+    public ArrayList<Game> removeGames(Predicate<Game> condition) {
+        ArrayList<Game> removedGames = new ArrayList<>();
+        for (Game game : gamesArray) {
+            if (condition.test(game)) {
+                removedGames.add(game);
+                gamesArray.remove(game);
+            }
+        }
+        return removedGames;
     }
 }
