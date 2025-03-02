@@ -31,8 +31,8 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="usernameInput" pref="202" max="32767" attributes="0"/>
-                  <Component id="passwordInput" max="32767" attributes="0"/>
+                  <Component id="usernameInput" max="32767" attributes="0"/>
+                  <Component id="passwordInput" pref="202" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -57,9 +57,9 @@
                   </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="passwordLabel" pref="27" max="32767" attributes="0"/>
-                  <Component id="passwordInput" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="passwordLabel" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                  <Component id="passwordInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
           </Group>
@@ -100,7 +100,10 @@
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JTextField" name="passwordInput">
+    <Component class="javax.swing.JPasswordField" name="passwordInput">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>

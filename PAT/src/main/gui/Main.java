@@ -109,7 +109,7 @@ public class Main extends javax.swing.JFrame {
         signupDialog.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent event) {
-                System.out.println("SIGNUP window closed.");
+                System.out.println(signupDialog.age.getValue());
             }
         
         });   
