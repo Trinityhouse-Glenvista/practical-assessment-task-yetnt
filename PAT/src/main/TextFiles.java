@@ -20,7 +20,7 @@ public class TextFiles {
     private static ArrayList<User> usersArray = new ArrayList<>();
     private static ArrayList<Game> gamesArray = new ArrayList<>();
 
-    TextFiles() {
+    public TextFiles() {
         this.read();
     }
 
